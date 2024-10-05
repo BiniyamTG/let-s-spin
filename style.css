@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(45deg, #2b88f0, #f0932b, #273c75, #f39c12, #9b59b6, #2ecc71, #e74c3c);
+  background-size: 600% 600%;
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  animation: artisticBackground 15s ease infinite;
+}
+
+@keyframes artisticBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+h3 {
+  color: #fff;
+  margin: 10px 0 20px;
+  text-align: center;
+  text-shadow: 0 0 10px #fff, 0 0 20px #f0932b, 0 0 30px #273c75, 0 0 40px #9b59b6;
+}
+
+.container {
+  width: 500px;
+}
+
+textarea {
+  border: none;
+  display: block;
+  width: 100%;
+  height: 100px;
+  font-family: inherit;
+  padding: 10px;
+  margin: 0 0 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  box-shadow: 0 0 20px #fff, 0 0 30px #f0932b, 0 0 40px #273c75, 0 0 50px #9b59b6;
+  animation: neonPulse 2s infinite;
+}
+
+@keyframes neonPulse {
+  0% {
+    box-shadow: 0 0 20px #fff, 0 0 30px #f0932b, 0 0 40px #273c75, 0 0 50px #9b59b6;
+  }
+  50% {
+    box-shadow: 0 0 30px #fff, 0 0 40px #f39c12, 0 0 50px #8e44ad, 0 0 60px #3498db;
+  }
+  100% {
+    box-shadow: 0 0 20px #fff, 0 0 30px #f0932b, 0 0 40px #273c75, 0 0 50px #9b59b6;
+  }
+}
+
+textarea:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.tag {
+  background-color: #f0932b;
+  color: #fff;
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin: 0 5px 10px 0;
+  font-size: 14px;
+  display: inline-block;
+  box-shadow: 0 0 20px #fff, 0 0 30px #f39c12, 0 0 40px #8e44ad, 0 0 50px #f0932b;
+  animation: floatTags 3s ease-in-out infinite;
+}
+
+@keyframes floatTags {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.tag.highlight {
+  background-color: #273c75;
+  box-shadow: 0 0 30px #fff, 0 0 40px #3498db, 0 0 50px #8e44ad, 0 0 60px #2ecc71;
+}
+
+/* Button styling and animation */
+button {
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 20px #fff, 0 0 30px #2b88f0, 0 0 40px #273c75, 0 0 50px #f39c12;
+  animation: buttonPulse 2s infinite alternate;
+  position: relative;
+}
+
+@keyframes buttonPulse {
+  0% {
+    box-shadow: 0 0 20px #fff, 0 0 30px #2b88f0, 0 0 40px #273c75, 0 0 50px #f39c12;
+  }
+  100% {
+    box-shadow: 0 0 30px #fff, 0 0 40px #f0932b, 0 0 50px #9b59b6, 0 0 60px #2ecc71;
+  }
+}
+
+button:hover {
+  box-shadow: 0 0 40px #fff, 0 0 50px #f39c12, 0 0 60px #8e44ad, 0 0 70px #2ecc71;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Bird animation styling */
+.bird {
+  width: 40px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: -30px;
+  left: 0;
+  animation: fly 5s ease-in-out infinite;
+  box-shadow: 0 0 10px #fff, 0 0 20px #f0932b, 0 0 30px #8e44ad;
+}
+
+.bird::before {
+  content: '';
+  width: 25px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  left: -30px;
+  transform: rotate(20deg);
+}
+
+.bird::after {
+  content: '';
+  width: 25px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 15px;
+  left: -30px;
+  transform: rotate(-20deg);
+}
+
+@keyframes fly {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(200px) translateY(-20px);
+  }
+  100% {
+    transform: translateX(400px) translateY(0);
+  }
+}
